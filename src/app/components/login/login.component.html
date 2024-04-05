@@ -1,0 +1,30 @@
+<div class="login-container">
+    <div class="main-container">
+      <!-- Left side (form) -->
+      <div class="left-side">
+        <h2 class="heading">Login</h2>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+          <div class="mb-4">
+            <label for="email" class="block font-bold mb-2">Email</label>
+            <input class="input" type="email" id="email" formControlName="email">
+            <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="error-message">Email is required</div>
+          </div>
+          <div class="mb-6">
+            <label for="password" class="block font-bold mb-2">Password</label>
+            <input class="input" type="password" id="password" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">Password is required and should be greater than 6 characters</div>
+          </div>
+          <div *ngIf="error" class="error-message">{{ error }}</div>
+          <button class="button button-primary" [disabled]="loginForm.invalid || loading" type="submit">Login</button>
+        </form>
+        <div class="register-link">
+          Need an account? <a (click)="redirectToRegister()">Register</a>
+        </div>
+      </div>
+      <!-- Right side (image) -->
+      <div class="right-side">
+        <img src="../../../assets/login-illustration.svg" alt="Login Illustration" width="400" height="400">
+      </div>
+    </div>
+  </div>
+  

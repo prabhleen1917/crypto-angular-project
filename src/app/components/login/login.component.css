@@ -1,0 +1,122 @@
+/* login.component.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    max-width: 800px; /* Adjust as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .left-side,
+  .right-side {
+    flex: 1;
+  }
+  
+  .left-side {
+    padding: 40px;
+  }
+  
+  .right-side {
+    background-color: #000;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }  
+  
+  .input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .button {
+    width: 90px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  .button-primary {
+    background-color: #6366f1;
+    color: #fff;
+    border: none;
+  }
+  
+  .button-secondary {
+    background-color: #999;
+    color: #fff;
+    border: none;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .register-link {
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  .register-link a {
+    color: #4a90e2;
+    cursor: pointer;
+  }
+  
+  /* Adjust image size if needed */
+  .right-side img {
+    margin-top:50px;
+    width: 100%;
+    height: auto;
+  }
+  

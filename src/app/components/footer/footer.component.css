@@ -1,0 +1,15 @@
+.footer {
+    background-color: rgb(25, 85, 112); /* Set background color */
+    color: white; /* Set text color */
+    padding: 20px 0; /* Add padding */
+    text-align: center; /* Center align text */
+    position: fixed; /* Position the footer */
+    bottom: 0; /* Stick to the bottom of the screen */
+    width: 100%; /* Full width */
+  }
+  
+  .footer .container {
+    max-width: 1200px; /* Set max-width for content */
+    margin: 0 auto; /* Center align content */
+  }
+  
