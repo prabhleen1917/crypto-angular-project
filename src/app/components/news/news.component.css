@@ -1,3 +1,43 @@
-.news {
-    margin-top: 100px;
+/* news.component.css */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 120px;
+    margin-left: 30px;
+  }
+
+  .p {
+      font-size: 16px;
+  }
+  
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .article {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+  }
+  
+  .article-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .article-date {
+    font-size: 0.875rem;
+    color: #757575;
+  }
+  
+  .articles{
+ display: flex;
+  }
+
+  .article-image {
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }

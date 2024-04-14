@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
 
 
 interface Coin {
@@ -35,31 +36,15 @@ interface ApiResponse {
 @Component({
   selector: 'app-searchbar',
   standalone: true,
-  imports: [FormsModule],
+  imports: [NgFor,FormsModule],
   templateUrl: './searchbar.component.html',
   styleUrl: './searchbar.component.css'
 })
 export class SearchbarComponent {
+  @Output() search = new EventEmitter<string>();
   searchTerm: string = '';
-  coins: Coin[] = [];
 
-  // constructor(private http: HttpClient) { }
-
-  search() {
-    // const apiUrl = 'https://api.coinranking1.p.rapidapi.com/coins';
-    // const headers = {
-    //   'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    //   'x-rapidapi-key': '23084697ffmsh66891a17478cb86p1778a1jsne0902ba87745' // Replace with your actual RapidAPI key
-    // };
-
-    // this.http.get<ApiResponse>(apiUrl, { headers }).subscribe(
-    //   response => {
-    //     console.log('Coins:', response.data.coins);
-    //     this.coins = response.data.coins;
-    //   },
-    //   error => {
-    //     console.error('Failed to fetch coins:', error);
-    //   }
-    // );
+  onSearch() {
+    this.search.emit(this.searchTerm);
   }
 }

@@ -1,6 +1,88 @@
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
+/* Styles for the search bar and table */
+.search-bar-container {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+
+  }
+  
+  thead {
+    text-align: left;
+    background-color: #0f617c;; /* Adjust to match your design */
+  }
+  
+  th, td {
+    padding: 10px; /* Adjust as needed */
+  }
+  
+  tr {
+    border-bottom: 1px solid #E0E0E0; /* Adjust to match your design */
+  }
+
+  tr:hover {
+    background-color: #375980;
+  }
+  
+  /* Coin image and name column styling */
+  td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust as needed */
+  }
+  
+  .coin-image {
+    width: 30px; /* Adjust as needed */
+    height: auto;
+  }
+  
+  /* Positive and negative price change styles */
+  .positive-change {
+    color: #4CAF50; /* Adjust to match your design */
+  }
+  
+  .negative-change {
+    color: #F44336; /* Adjust to match your design */
+  }
+  
+  /* Market cap column styling */
+  td:last-child {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    thead {
+      display: none;
+    }
+  
+    table, tbody, tr, td {
+      display: block;
+      width: 100%;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+    }
+  
+    td {
+      text-align: right;
+      position: relative;
+      padding-left: 50%; /* Adjust as needed */
+    }
+  
+    td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%; /* Adjust as needed */
+      padding-left: 15px; /* Adjust as needed */
+      font-weight: bold;
+      text-align: left;
+    }
   }
   

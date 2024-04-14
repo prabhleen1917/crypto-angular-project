@@ -1,8 +1,12 @@
-<div class="search-bar-container">
+<!-- <div class="search-bar-container">
 <div>
     <input class="search-input" type="text" [(ngModel)]="searchTerm" placeholder="Search coins...">
     <button class="search-button" (click)="search()">Search</button>
   </div>
-</div>
+</div> -->
   
+<div class="search-bar-container">
+    <input class="search-input" type="text" [(ngModel)]="searchTerm" placeholder="Search coins..." (input)="onSearch()">
+    <button class="search-button" (click)="onSearch()">Search</button>
+  </div>
   

@@ -1,1 +1,19 @@
-<p class="crypto">crypto works!</p>
+<!-- crypto.component.html -->
+<div *ngIf="isLoading">Loading...</div>
+<div class="coins-grid" *ngIf="!isLoading">
+  <div class="coin-card" *ngFor="let coin of coins">
+    <!-- Shortlist button will only be shown to logged-in users -->
+    <button *ngIf="authService.isLoggedIn()" (click)="toggleFavorite(coin.id)" [class.shortlisted]="isFavorite(coin.id)" class="shortlist-btn">
+      {{ isFavorite(coin.id) ? 'Remove from Shortlist' : 'Shortlist' }}
+    </button>
+    <h2 class="coin-name">{{ coin.name }}</h2>
+    <div class="coin-details">
+      <p class="coin-price">Price: {{ coin.current_price }}</p>
+      <p class="coin-marketcap">Market cap: {{ coin.market_cap }}</p>
+      <p class="coin-change" [ngClass]="{'positive': coin.price_change_percentage_24h > 0, 'negative': coin.price_change_percentage_24h < 0}">
+        Change: {{ coin.price_change_percentage_24h }}
+      </p>
+    </div>
+  </div>
+</div>
+

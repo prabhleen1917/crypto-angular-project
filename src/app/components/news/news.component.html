@@ -1,1 +1,20 @@
-<p class="news">news works!</p>
+<div *ngIf="isLoading">Loading news articles...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error">
+  <h1 class="title">Latest News on Pegasus</h1>
+  <div class="articles-container">
+    <div *ngFor="let article of articles" class="article">
+    <div class="articles">
+      <img class="article-image" [src]="article.image_url" alt="News Image" />
+      <div>
+      <a [href]="article.link" target="_blank" rel="noopener noreferrer">
+        <h2 class="article-title">{{ article.title }}</h2>
+      </a>
+      <p>{{ article.description }}</p>
+      <p class="article-date">Published on: {{ article.pubDate }}</p>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>

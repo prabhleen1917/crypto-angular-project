@@ -1,3 +1,55 @@
-.crypto {
-    margin-top: 170px;
-}
+/* crypto.component.css */
+.coins-grid {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .coin-card {
+    border: 1px solid #000; /* Adjust according to your design */
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff; /* Adjust according to your design */
+  }
+  
+  .coin-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000;
+  }
+  
+  .coin-price,
+  .coin-marketcap,
+  .coin-change {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #000;
+  }
+  
+  .positive {
+    color: #4CAF50; /* Adjust according to your design for positive change */
+  }
+  
+  .negative {
+    color: #F44336; /* Adjust according to your design for negative change */
+  }
+
+  /* Add styles for the shortlist button */
+.shortlist-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #eee; /* Adjust as needed */
+    margin-bottom: 8px;
+  }
+  
+  /* Change the button appearance based on the favorite state */
+  .shortlist-btn.shortlisted {
+    background-color: #ffd700; /* Or any color to indicate it's shortlisted */
+  }
+  

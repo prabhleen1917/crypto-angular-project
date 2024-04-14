@@ -13,6 +13,8 @@ import { routes } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './components/login/login.component';
+import { CoinDetailComponent } from './components/coin-detail/coin-detail.component';
+import { HomeLayoutComponent } from './components/home-layout/home-layout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginComponent } from './components/login/login.component';
     NewsComponent,
     CryptoComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CoinDetailComponent,
+    HomeLayoutComponent
     // your components
   ],
   imports: [

@@ -1,1 +1,32 @@
-<app-searchbar></app-searchbar>
+
+<app-searchbar (search)="handleSearch($event)"></app-searchbar>
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="!isLoading && !error">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Price</th>
+      <th>Change</th>
+      <th>Market Cap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coin of filteredCoins" [routerLink]="['/coin', coin.name.toLowerCase()]">
+        <td data-label="Name">
+          <img [src]="coin.image" [alt]="coin.name" class="coin-image">{{ coin.name }}
+        </td>
+        <td data-label="Symbol">{{ coin.symbol }}</td>
+        <td data-label="Price">{{ coin.current_price}}</td>
+        <td data-label="Change" [class.positive-change]="coin.price_change_percentage_24h > 0"
+            [class.negative-change]="coin.price_change_percentage_24h < 0">
+          {{ coin.price_change_percentage_24h }}
+        </td>
+        <td data-label="Market Cap">{{ coin.market_cap }}</td>
+      </tr>      
+  </tbody>
+</table>
+

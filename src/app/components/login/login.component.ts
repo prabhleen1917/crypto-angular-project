@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,16 +23,32 @@ export class LoginComponent implements OnInit {
   // email: string = '';
   // password: string = '';
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router,   private authService: AuthService) { }
 
   ngOnInit(): void {
+    // Auto-redirect if already logged in
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/home']);
+    }
   }
 
   handleSubmit(): void {
-    // Implement form submission logic here
-    console.log('Form submitted');
-    // Example: navigate to home page on successful login
-    this.router.navigateByUrl('/home');
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    const { email, password } = this.loginForm.value;
+
+    this.authService.login(email, password).subscribe({
+      next: () => {
+        this.router.navigate(['/home']);
+      },
+      error: error => {
+        this.error = error;
+        this.loading = false;
+      }
+    });
   }
 
   redirectToRegister(): void {

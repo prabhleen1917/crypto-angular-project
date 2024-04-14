@@ -1,0 +1,15 @@
+<!-- Coin Detail Component Template -->
+<div *ngIf="isLoading" class="coin-container loading">Loading...</div>
+<div *ngIf="error" class="coin-container error">{{ error }}</div>
+<div *ngIf="!isLoading && coin" class="coin-container">
+  <div class="coin-details">
+    <h1>{{ coin.name }}</h1>
+    <div class="coin-image">
+      <img [src]="coin.image.large" alt="Image of {{ coin.name }}">
+    </div>
+    <p>Market Cap Rank {{ coin.market_cap_rank }}</p>
+    <p>Symbol {{ coin.symbol }}</p>
+    <p>Current Price: ${{ coin.market_data.current_price.usd }}</p>
+  </div>
+  <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [xaxis]="chartOptions.xaxis!" [dataLabels]="chartOptions.dataLabels!" [tooltip]="chartOptions.tooltip!"></apx-chart>
+</div>
