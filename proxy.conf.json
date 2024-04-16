@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://puce-betta-cape.cyclic.app",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  
