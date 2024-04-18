@@ -24,12 +24,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Features
 Following pages have been made 
-1) Homepage - List of trending stocks with information and Search functionality on the basis of stock name.
-2) Details Page - We have introduced the feature of chart visulaistion using ApexChart library. Along with this, there are filters on the charts days wise. There is also an option to download the visulisations in png, sbg, jpg
-3) News Feed - There is a nes page which shows the trending news.
-4) Navbar - Have options like Home, News, Trending coins, About, Login button
-5) Login Page/ Registration Page - The backend logic for these pages will be served from the node app deployed already.
-6) Shortlist Feature on Trending Page - This will be visible on the trending Page where users can shortlist their favourite coins.
+1) Homepage (Prabhleen) - List of trending stocks with information and Search functionality on the basis of stock name.
+2) Details Page (Prabhleen) - We have introduced the feature of chart visulaistion using ApexChart library. Along with this, there are filters on the charts days wise. There is also an option to download the visulisations in png, sbg, jpg
+3) News Feed (Saurabh)- There is a nes page which shows the trending news.
+4) Navbar (Prabhleen)- Have options like Home, News, Trending coins, About, Login button
+5) Login Page/ Registration Page  (Taranjeet)- The backend logic for these pages will be served from the node app deployed already.
+6) Shortlist Feature on Trending Page  (Saurabh)- This will be visible on the trending Page where users can shortlist their favourite coins.
+7) About Page (Taranjeet)
+   
+## Documentation Doc
+https://docs.google.com/document/d/1H54p-JW3WaNPn-YxW8mRYwVklleYRvlsn9Gr31vnxkw/edit
+
 
 ## Further help
 
